@@ -1,0 +1,38 @@
+<ion-view view-title="用户注册" align-title="center">
+	<ion-nav-buttons side="left">
+		<button onclick="goback()" class="button icon icon ion-android-arrow-back nav_btnbg">返回</button>
+	</ion-nav-buttons>
+	<ion-content style="background-image: url('img/reg.jpg')">
+		<!--submit="submitForm(register_form.$valid)" novalidate="novalidate"-->
+		<form action="" method="" name="register_form" class="register_form" >
+			<ul class="list">
+				<li class="item item-input item-icon">
+					<i class="icon ion-ios-telephone" style="margin-right:0.5rem;"></i>
+					<input type="text" name="user" id="phonenumber" placeholder="手机号" ng-model="phone" required  ng-pattern="/^[1][135678]\d{9}$/" />
+					<span style="width: 10rem;margin-right: 0.5rem;font-size: 0.7rem;text-align: center;" ng-show="register_form.user.$dirty&&register_form.user.$valid" class="bg-success">输入正确</span>
+					<span style="width: 10rem;margin-right: 0.5rem;font-size: 0.7rem;text-align: center;" ng-show="register_form.user.$dirty&&register_form.user.$error.pattern" class="bg-warning">手机号格式有误</span>					
+				</li>
+				<li class="item item-input item-icon">
+					<i class="icon ion-android-lock" style="margin-right:0.5rem;"></i>
+					<input type="password" name="password" id="password" placeholder="密　码" ng-model="pwd" required ng-minlength="6" ng-maxlength="20" ng-pattern="/^[\da-zA-Z]{6,20}$/" />
+					<span style="width: 10rem;margin-right: 0.5rem;font-size: 0.7rem;text-align: center;" ng-show="register_form.password.$dirty&&register_form.password.$valid" class="bg-success">密码格式正确</span>
+					<span style="width: 10rem;margin-right: 0.5rem;font-size: 0.7rem;text-align: center;" ng-show="register_form.password.$dirty&&register_form.password.$dirty&&register_form.password.$error.minlength" class="bg-warning">密码不能小于6位</span>
+					<span style="width: 10rem;margin-right: 0.5rem;font-size: 0.7rem;text-align: center;" ng-show="register_form.password.$dirty&&register_form.password.$error.maxlength" class="bg-warning">密码不能大于20位</span>
+					<span style="width: 10rem;margin-right: 0.5rem;font-size: 0.7rem;text-align: center;" ng-show="register_form.user.$dirty&&register_form.password.$error.pattern" class="bg-warning">密码格式有误</span>				
+				</li>
+				<li class="item item-input item-icon">
+					<i class="icon ion-android-lock" style="margin-right:0.5rem;"></i>
+					<input type="password" name="psw" id="surepwd" placeholder="确认密码" ng-model="spwd" required ng-minlength="6" ng-maxlength="20" />
+					<span style="width: 10rem;margin-right: 0.5rem;font-size: 0.7rem;text-align: center;" ng-show="register_form.psw.$dirty&&pwd==spwd" class="bg-success">密码输入一致</span>
+					<span style="width: 10rem;margin-right: 0.5rem;font-size: 0.7rem;text-align: center;" ng-show="register_form.psw.$dirty&&pwd!=spwd" class="bg-error">密码输入不一致</span>
+				</li>
+			</ul>
+			<div class="padding">			
+				<button class="button button-calm register_btn"  ng-click="registertest(phone,pwd,spwd)">注　册</button>				
+			</div>		
+		</form>
+		<div class="reg_tips">			
+			<a href="#/login">已有账户，去登录</a>
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,23 @@
+<ion-view view-title="我的收藏" align-title="center">
+	<ion-nav-buttons side="left">
+		<button onclick="goback()" class="button icon ion-android-arrow-back nav_btnbg">返回</button>
+	</ion-nav-buttons>
+	<ion-nav-buttons side="right">
+		<button class="button" side="right" ng-click="showDelete()">编辑</button></ion-nav-buttons>
+	<ion-content>
+		<ion-list show-delete="isShowDelete" show-reorder="true">
+			<ion-item class="collectlist item-thumbnail-left" ng-repeat="item in collectList" ng-click="turnatical({{item.product_id}})">
+				<ion-delete-button ng-click="del($index)" class="ion-minus-circled"></ion-delete-button>
+				<img ng-src="{{item.img}}" onerror="javascript:this.src='img/03.png'">
+				<p>{{item.title}}</p>
+				<ion-reorder-button class="ion-navicon sort" on-reorder="move(item,$fromIndex,$toIndex)"></ion-reorder-button>
+			</ion-item>
+		</ion-list>
+</ion-view>
+		<!--<ul class="list">
+			<li class="item list-group-item" ng-repeat="item in list">
+				<a href="#/newscontent/{{item.aid}}">
+					{{item.title}}
+				</a>
+			</li>
+		</ul>-->	

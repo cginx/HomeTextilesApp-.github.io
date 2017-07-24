@@ -1,0 +1,23 @@
+<ion-view view-title="商品列表">
+	<ion-header-bar class="bar-subheader" style="padding:0;">
+		<div class="find_nav">
+			<ul class="find_nav_bar" id="navbarlist">
+				<li  ng-repeat="item in navbar" ng-class="{'active':$index==0}" ng-click="tab_navbar($index,item.catid)">
+					<a >{{item.title}}</a>
+				</li>
+			</ul>
+		</div>	
+	</ion-header-bar>
+	<ion-content delegate-handle="mainScroll">		
+			<ion-list class="find_list">
+				<!-- href="#/tab/hotcontent/{{item.aid}}"-->
+				<ion-item class="item item-thumbnail-left" ng-repeat="item in list1" href="#/findcontent/{{item.product_id}}" ng-class="{'item-borderless':$index==0}">	
+						<img ng-src="{{item.product_image}}" onerror="javascript:this.src='img/03.png'" >
+						<p>{{item.product_category_name}}</p>
+						<p>热度：<span class="assertive">{{item.hot_time}}</span></p>
+						<p>已被分享<span class="assertive">{{item.share_time}}</span>次</p>
+				</ion-item>
+			</ion-list>
+			<ion-infinite-scroll on-infinite="loadMorefind()" distance="1%" ng-if="hasfinddata"></ion-infinite-scroll>
+	</ion-content>
+</ion-view>

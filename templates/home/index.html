@@ -1,0 +1,80 @@
+<ion-view view-title="首页" align-title="center">	
+	<ion-nav-buttons side="left" >
+		<i  side="left" class="icon ion-navicon-round" ng-click="menuLeft()"></i>
+	</ion-nav-buttons>
+	<ion-nav-buttons side="right">
+		<button class="button nav_btnbg" side="right" ng-click="goLogin()">登录</button>
+	</ion-nav-buttons>
+	<ion-content>
+		<ion-slide-box does-continue="true" auto-play="2000" show-pager="true" pager-click="goPage(index)">
+			<ion-slide ng-repeat="item in imglist" class="lunbo">
+				<div class="box">
+					<img src="{{item.src}}"/>
+				</div>
+			</ion-slide>
+		</ion-slide-box>
+		<div class="nav_btn">
+			<a href="#" >
+				<div class="icon_bg bg-assertive"><i class="icon ion-calendar assertive"></i></div>
+				<span>签到送礼</span>
+			</a>
+			<a href="#/tab/cart">
+				<div class="icon_bg bg-royal"><i class="icon ion-clipboard royal"></i></div>
+				<span>订单查询</span>
+			</a>
+			<a href="#">
+				<div class="icon_bg bg-energized"><i class="icon ion-ios-telephone energized"></i></div>
+				<span>联系客服</span>
+			</a>
+			<a href="#/tab/find">
+				<div class="icon_bg bg-calm"><i class="icon ion-ios-keypad-outline calm"></i></div>
+				<span>全部分类</span>
+			</a>
+		</div>
+		<!--热卖品类-->
+		<section class="hotClass">
+			<div class="hotClass_title">
+				<p>热门品类</p>
+			</div>
+			<div class="class_box">
+				<div class="row">
+					<div class="class_box_list">
+						<a href="#"><img src="./img/1.jpg" >
+							<div class="zhezhao_tip assertive">爆款 top sale</div>
+						</a>
+					</div>
+					<div class="class_box_list"><img src="./img/1.jpg" >
+						<div class="zhezhao_tip energized">夏凉 summer</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="class_box_list">
+						<img src="./img/1.jpg" >
+						<div class="zhezhao_tip balanced">套件 sulte</div>
+					</div>
+					<div class="class_box_list">
+						<img src="./img/1.jpg" >
+						<div class="zhezhao_tip royal">被芯 quilt core</div>
+					</div>
+				</div>
+			</div>						
+		</section>
+		<!--精选产品-->
+		<section class="TopProduct">
+			<div class="TopProduct_title">
+				<p>精选产品</p>
+			</div>
+			<ion-list>
+				<ion-item class="item item-thumbnail-left" ng-repeat="item in list1" href="#/hotcontent/{{item.product_id}}">
+					<img ng-src="{{item.product_image}}" onerror="javascript:this.src='img/03.png'" >
+					<div style="font-size: 0.8rem;color:#666;">{{item.product_category_name}}</div>
+					<div class="assertive">{{item.product_price}}</div>
+					<div style="font-size: 0.7rem;color:#666;">热度	{{item.product_hot_time}}</div>
+					<div style="font-size: 0.7rem;color:#666;">分享次数	{{item.product_share_time}}</div>
+				</ion-item>
+			</ion-list>
+			<!--<ion-infinite-scroll on-infinite="loadMorehot()" distance="1%" ng-if="hashotdata">-->
+			<!--</ion-infinite-scroll>-->
+		</section>
+	</ion-content>
+</ion-view>

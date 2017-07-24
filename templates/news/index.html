@@ -1,0 +1,23 @@
+<ion-view view-title="新闻" align-title="center">
+
+	<ion-content>
+		<!--<ul class="list">
+			<li class="item list-group-item" ng-repeat="item in list">
+				<a href="#/newscontent/{{item.aid}}">
+					{{item.title}}
+				</a>
+			</li>
+		</ul>-->
+		<!--下拉更新-->
+		
+		<!--<a href="#/tab/newscontent" class="button button-positive button-block">跳转到新闻详情</a>-->
+		<ion-list>
+			<ion-item ng-repeat="item in list" href="#/findcontent/{{item.aid}}"> 
+				{{item.title}}
+			</ion-item>
+
+		</ion-list>
+	<ion-infinite-scroll on-infinite="loadMore()" distance="1%" ng-if="hasdata">
+		</ion-infinite-scroll>
+	</ion-content>
+</ion-view>

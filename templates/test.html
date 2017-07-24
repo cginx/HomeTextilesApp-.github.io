@@ -1,0 +1,20 @@
+<ion-view view-title="手机验证码" align-title="center">
+	<ion-nav-buttons side="left">
+		<button ng-click="$ionicGoBack()" class="button icon ion-ios-arrow-back button-clear">返回</button>
+	</ion-nav-buttons>
+
+	<ion-content>
+		<h3 class="test_tips">马上验证手机,激活你的账户</h3>
+		<p class="test_tips_msg">验证码已通过短信的方式发送至您的手机,请输入验证码完成验证,手机绑定是为了验证用户的真实性和账号安全</p>
+		<form action="" method="" class="test_form">
+			<div class="list">		
+				<input type="text" placeholder="输入手机验证码" class="test_box" />	
+				<button ng-click="repeatMa(Ma)" class="button button-balanced againsend">重发{{time}}</button>
+			</div>
+			<div class="padding" ng-click="phoneTest()">
+				<span class="button button-calm register_sure_btn">确定</span>
+			</div>
+		</form>
+
+	</ion-content>
+</ion-view>

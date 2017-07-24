@@ -1,0 +1,145 @@
+{
+  "index.html": {
+    "resources": [
+      "templates/ma.html",
+      "templates/help.html",
+      "js/app.js",
+      "js/service.js",
+      "templates/onlinechat.html",
+      "lib/angular.min.js",
+      "lib/bootstrap/css/bootstrap.min.css",
+      "lib/ionic-1.x/release/js/ionic.bundle.min.js",
+      "css/style.css",
+      "js/controller.js",
+      "templates/advice.html",
+      "js/index.js",
+      "lib/ionic-1.x/release/css/ionic.min.css",
+      "lib/jquery.min.js",
+      "templates/test.html",
+      "templates/register.html",
+      "templates/find/findcontent.html",
+      "templates/collect.html",
+      "templates/tabs.html",
+      "templates/user/index.html",
+      "templates/login.html",
+      "templates/find/index.html",
+      "templates/home/hotcontent.html",
+      "templates/cart/index.html",
+      "img/login_bg.jpg",
+      "json/findclass.json",
+      "index.html",
+      "json/findclasscontent.json",
+      "img/l5.jpg",
+      "img/l4.jpg",
+      "img/l3.jpg",
+      "img/l2.jpg",
+      "img/1.jpg",
+      "json/hot.json",
+      "json/hotcontent.json",
+      "img/intro1.jpg",
+      "img/intro2.jpg",
+      "img/intro3.jpg"
+    ],
+    "refer": [
+      "index.html",
+      "templates/intro.html",
+      "templates/home/index.html"
+    ]
+  },
+  "templates/collect.html": {
+    "href": "templates/collect.html",
+    "priority": 0,
+    "resources": [],
+    "refer": []
+  },
+  "templates/register.html": {
+    "href": "templates/register.html",
+    "priority": 0,
+    "resources": [],
+    "refer": []
+  },
+  "templates/find/findcontent.html": {
+    "href": "templates/find/findcontent.html",
+    "priority": 0,
+    "resources": [],
+    "refer": []
+  },
+  "templates/intro.html": {
+    "href": "templates/intro.html",
+    "priority": 0,
+    "resources": [],
+    "refer": []
+  },
+  "templates/ma.html": {
+    "href": "templates/ma.html",
+    "priority": 0,
+    "resources": [],
+    "refer": []
+  },
+  "templates/home/hotcontent.html": {
+    "href": "templates/home/hotcontent.html",
+    "priority": 0,
+    "resources": [],
+    "refer": []
+  },
+  "templates/find/index.html": {
+    "href": "templates/find/index.html",
+    "priority": 0,
+    "resources": [],
+    "refer": []
+  },
+  "templates/home/index.html": {
+    "href": "templates/home/index.html",
+    "priority": 0,
+    "resources": [],
+    "refer": []
+  },
+  "templates/advice.html": {
+    "href": "templates/advice.html",
+    "priority": 0,
+    "resources": [],
+    "refer": []
+  },
+  "templates/onlinechat.html": {
+    "href": "templates/onlinechat.html",
+    "priority": 0,
+    "resources": [],
+    "refer": []
+  },
+  "templates/help.html": {
+    "href": "templates/help.html",
+    "priority": 0,
+    "resources": [],
+    "refer": []
+  },
+  "templates/tabs.html": {
+    "href": "templates/tabs.html",
+    "priority": 0,
+    "resources": [],
+    "refer": []
+  },
+  "templates/test.html": {
+    "href": "templates/test.html",
+    "priority": 0,
+    "resources": [],
+    "refer": []
+  },
+  "templates/user/index.html": {
+    "href": "templates/user/index.html",
+    "priority": 0,
+    "resources": [],
+    "refer": []
+  },
+  "templates/cart/index.html": {
+    "href": "templates/cart/index.html",
+    "priority": 0,
+    "resources": [],
+    "refer": []
+  },
+  "templates/login.html": {
+    "href": "templates/login.html",
+    "priority": 0,
+    "resources": [],
+    "refer": []
+  }
+}

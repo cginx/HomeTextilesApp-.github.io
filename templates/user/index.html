@@ -1,0 +1,58 @@
+<ion-view view-title="用户中心" align-title="center">
+	<ion-nav-buttons side="right">
+		<button class="button nav_btnbg" side="right" ng-click="layout()">退出登录</button>
+	</ion-nav-buttons>
+	<ion-content style="background:#ddd;">
+		<div class="login_tu">
+			<img src="img/login_bg.jpg"/>
+			<div class="login_person">
+				<div class="ihead"><i class="person-head ion-ios-person-outline light"></i></div>
+				<div class="head_card_msg" style="font-size:0.8rem;">
+					<span>用户：</span><span class="person_name">{{person_name}}</span>
+				</div>
+				<div class="head_card_msg" style="font-size:0.8rem;">
+					<span>积分：</span><span class="person_ciet">0.00</span>
+				</div>
+			</div>
+
+			<!--<div class="login_btn">
+				<a href="#/login">立即登录</a>
+				<a href="#/register">立即注册</a>
+			</div>-->
+		</div>
+		<div class="zhezhao_person"></div>
+		<br/>
+		<ion-list>
+			<ion-item class="item-icon-left" href="#/cart">
+				<i class="icon ion-ios-cart"></i>
+				<span>我的购物车</span>
+				
+			</ion-item>
+			<ion-item class="item-icon-left" href="#/collect">
+				<i class="icon ion-star"></i>
+				<span>我的收藏</span>
+			</ion-item>			
+			<br />
+			<ion-item class="item-icon-left" href="#/onlinechat">
+				<i class="icon ion-chatbubble-working "></i>
+				<span>在线客服</span>
+			</ion-item>
+			<ion-item class="item-icon-left" href="#/help">
+				<i class="icon ion-help-circled "></i>
+				<span>帮助手册</span>
+			</ion-item>
+			<br />
+			<ion-item class="item-icon-left" href="#/advice">
+				<i class="icon ion-chatbubble "></i>
+				<span>意见反馈</span>
+			</ion-item>
+			<ion-item class="item-icon-left" href="#site">
+				<i class="icon ion-gear-b "></i>
+				<span>设置</span>
+			</ion-item>			
+			<br />
+			
+		</ion-list>
+
+	</ion-content>
+</ion-view>

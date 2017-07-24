@@ -1,0 +1,63 @@
+<ion-view view-title="商品详情" align-title="center">
+	<ion-nav-buttons side="left">
+		<button ng-click="$ionicGoBack()" class="button icon ion-android-arrow-back nav_btnbg">返回</button>
+	</ion-nav-buttons>
+	<ion-content>				
+		<ion-spinner ng-if="isShowLoading" icon="spiral" style="width:40px;height:40px;display: block;margin: 100px auto 0 auto;"></ion-spinner>
+		<p class="title" ng-if="!isShowLoading"></p>
+		<img ng-src="{{item.cover_img}}" style="width:100%;vertical-align: middle;"/>
+		<div class="content" ng-if="!isShowLoading">
+			<div class="sku_metr">
+		        <div class="detail_info" style="outline: 0 none;margin: 0;padding: 0;">
+		            <div class="product_name">{{item.name}}</div>                       
+		                <div class="price" id="price_for_sale">￥{{item.childProducts[0].price}}--￥{{item.childProducts[1].price}}</div>                     
+		            <div class="title" style="white-space: normal;">{{item.content}}</div>
+		        </div>
+		    </div>
+		    <div class="contentpic">
+		        <div class="clear" id="contentpic">            
+	                <div class="product_item" ng-repeat="i in item.ninePhotos" style="width: 31%;float: left;text-align: center;">
+	                    <img class="scrollLoading optimise-show" src="{{i}}" data-url="{{i}}" alt="">
+	                </div>                                        
+		        </div>
+		        <div class="clear">
+		            <p ng-repeat="i in item.ninePhotos">
+		            	<img src="{{i}}" style="float:none;">
+		            </p>
+		        </div>
+		        <p class="pic_end" style="display: block">
+		            <span>END</span>
+		        </p>
+	    	</div>
+		    
+			<div id="detail_mb" class="mengban"></div>
+		</div>
+	</ion-content>
+	<div class="bar bar-footer">
+		<div class="detailbottom row" style="height: 2.25rem;margin: 0 auto;">
+			<div class="col" style="width: 100%;height: 2.25rem;padding: 0;">
+				<div class="bock_15 border_right">
+			    	<a href="#">
+			    		<i id="fav" class="icon ion-bag"></i>		
+			        	<span>进店</span>
+			    	</a>		        
+		    	</div>
+		    </div>
+			<div class="col"style="width: 100%;height: 2.25rem;padding: 0;">
+				<div class="bock_15" ng-click="collect();$event.stopPropagation();">
+			    	<i id="fav" ng-class="{'ion-android-star':isCollect,'ion-android-star-outline':!isCollect}" class="icon balanced"></i>			    	
+			        <span id="favfont">收藏</span>		        
+			    </div>
+			</div>								
+			<div class="col" style="width: 100%;height: 2.25rem;padding: 0;">				
+				<div class="add_cart" id="add_cart_btn" ng-click="addCart()">加入购物车</div>
+			</div>
+			<div class="col" style="width: 100%;height: 2.25rem;padding: 0;">
+				<a href="#/cart">
+					<div class="shop" id="buynow_btn">立即购买</div>
+				</a>
+			</div>
+			
+		</div>
+	</div>
+</ion-view>

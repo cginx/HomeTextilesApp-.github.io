@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,target-densitydpi=high-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<!--<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />-->
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="lib/ionic-1.x/release/css/ionic.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="lib/jquery.min.js"></script>	
+		<script src="lib/angular.min.js"></script>
+		<script src="lib/ionic-1.x/release/js/ionic.bundle.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/controller.js"></script>
+		<script src="js/service.js"></script>
+		<script src="js/index.js"></script>
+		<script type="text/javascript">		
+		</script>
+	</head>
+	<body>			
+	<ion-side-menus><!--侧边栏-->
+		<ion-side-menu-content>
+			<!--引导页-->
+			<script id="templates/intro.html" type="text/ng-template">
+				<ion-view>				    
+				    <ion-slide-box on-slide-changed="slideChanged(index)">
+				        <ion-slide><img src="img/intro1.jpg" style="width: 100%;height: 100%;"/></ion-slide>
+				        <ion-slide><img src="img/intro2.jpg" style="width: 100%;height: 100%;"/></ion-slide>
+				        <ion-slide>
+				            <img src="img/intro3.jpg" style="width: 100%;height: 100%;"/>
+				            <button style="border-radius:5px;width:50%;height:2rem;margin: 0 auto;position: absolute;bottom:20%;left:50%;transform: translateX(-50%);background: rgba(60, 208, 195, 0.78);color: #fff;" class="button button-positive button-clear no-animation" ng-click="startApp()" ng-show="slideIndex == 2">
+				            	<span style="font-size:1rem;">打开我的App</span>
+				        	</button>
+				        </ion-slide>
+				    </ion-slide-box>
+				</ion-view>
+			</script>
+			<script id="templates/home/index.html" type="text/ng-template">
+				<ion-view view-title="首页" align-title="center">
+		
+					<ion-nav-buttons side="left" >
+						<i  side="left" class="icon ion-navicon-round" ng-click="menuLeft()"></i>
+					</ion-nav-buttons>
+					<ion-nav-buttons side="right">
+						<button class="button" side="right" ng-click="goLogin()">登录</button>
+					</ion-nav-buttons>
+					<ion-content>
+		
+						<ion-slide-box does-continue="true" auto-play="2000" show-pager="true" pager-click="goPage(index)">
+							<ion-slide ng-repeat="item in imglist">
+								<div class="box">
+									<img src="{{item.src}}"/>
+								</div>
+							</ion-slide>
+						</ion-slide-box>
+		
+						<div class="nav_btn">
+							<a href="#" >
+								<div class="icon_bg bg-assertive"><i class="icon ion-calendar assertive"></i></div>
+								<span>签到送礼</span>
+							</a>
+							<a href="#/tab/cart">
+								<div class="icon_bg bg-royal"><i class="icon ion-clipboard royal"></i></div>
+								<span>订单查询</span>
+							</a>
+							<a href="#">
+								<div class="icon_bg bg-energized"><i class="icon ion-ios-telephone energized"></i></div>
+								<span>联系客服</span>
+							</a>
+							<a href="#/tab/find">
+								<div class="icon_bg bg-calm"><i class="icon ion-ios-keypad-outline calm"></i></div>
+								<span>全部分类</span>
+							</a>
+						</div>
+						<!--热卖品类-->
+						<section class="hotClass">
+							<div class="hotClass_title">
+								<p>热门品类</p>
+							</div>
+							<div class="class_box">
+								<div class="row">
+									<div class="class_box_list">
+										<a href="#">
+											<img src="./img/1.jpg" >
+											<div class="zhezhao_tip assertive">爆款 top sale</div>
+										</a>
+									</div>
+									<div class="class_box_list">
+										<img src="./img/1.jpg" >
+										<div class="zhezhao_tip energized">夏凉 summer</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="class_box_list">
+										<img src="./img/1.jpg" >
+										<div class="zhezhao_tip balanced">套件 sulte</div>
+									</div>
+									<div class="class_box_list">
+										<img src="./img/1.jpg" >
+										<div class="zhezhao_tip royal">被芯 quilt core</div>
+									</div>
+								</div>
+		
+							</div>							
+						</section>
+						<!--精选产品-->
+						<section class="TopProduct">
+							<div class="TopProduct_title">
+								<p>精选产品</p>
+							</div>
+							<ion-list>
+								<ion-item class="item item-thumbnail-left" ng-repeat="item in list1" href="#/hotcontent/{{item.product_id}}">
+									<img ng-src="{{item.product_image}}" onerror="javascript:this.src='img/03.png'" >
+									<div style="font-size: 0.8rem;color:#666;">{{item.product_category_name}}</div>
+									<div class="assertive">{{item.product_price}}</div>
+									<div style="font-size: 0.7rem;color:#666;">热度	{{item.product_hot_time}}</div>
+									<div style="font-size: 0.7rem;color:#666;">分享次数	{{item.product_share_time}}</div>
+								</ion-item>
+							</ion-list>
+						</section>
+		
+					</ion-content>
+				</ion-view>
+		
+			</script>
+			<!--ion-nav-bar   以前是放在首页-->
+			<ion-nav-bar class="bar_header header"></ion-nav-bar>
+			<ion-nav-view style="background: #ddd;"></ion-nav-view>
+		</ion-side-menu-content>
+			<!--ion-nav-view 相当于 视图页面  这里是侧边栏-->
+			<ion-side-menu side="left" width="200">
+				<div class="list">
+					<div class="item item-divider">
+						<a href="#/tab/home">首页<ion-nav-view name="tab-home"></ion-nav-view></a>
+					</div>
+					<div class="item item-divider">
+						<a href="#/tab/find">分类<ion-nav-view name="tab-news"></ion-nav-view></a>
+					</div>
+					<div class="item item-divider">
+						<a href="#/tab/cart">购物车<ion-nav-view name="tab-find"></ion-nav-view></a>
+					</div>
+					<div class="item item-divider">
+						<a href="#/tab/user">个人中心<ion-nav-view name="tab-user"></ion-nav-view></a>
+					</div>
+				</div>
+			</ion-side-menu>
+		</ion-side-menus>
+	</body>
+</html>
+<script type="text/javascript">	
+	function goback(){
+		console.log("1111");
+		history.back();
+	}	
+</script>

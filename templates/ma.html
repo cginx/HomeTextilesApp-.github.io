@@ -1,0 +1,19 @@
+
+<ion-modal-view>
+   <ion-header-bar class="bar-balanced" style="background:#3cd0c3;">
+       <div class="title">获取短信验证码</div>
+       <button class="button bar-positive"  ng-click="closeModal()" style="font-size:40px;background: #3cd0c3;">&times;</button>
+   </ion-header-bar>
+    <ion-content>
+    	<div class="testModel" style="height:125px;">
+    			<label class="yanzma" style="width: 80px;height:50px;line-height: 50px;margin: 15px 5px 15px 0;color: #757575;display: -webkit-flex;display: flex;flex-direction: row;flex-wrap: nowrap;justify-content: space-between;">验证码：</label>
+                <input type="text" class="inputMa" name="testma" placeholder="请输入验证码" style="height: 50px;margin: 15px 5px 15px 0;width: 100px;flex:none;border: 1px solid #ccc;"/>
+                <div class="mama button button-energized" ng-click="send()" style="flex:none;">发送验证码</div>
+                <input type="hidden" id="virmma"/>
+		</div>
+        <div class="submitBox" style="width:100%;">
+            <div class="submitbtn button button-balanced" ng-click="submitTest(testma)" style="width:100%;margin: 0 auto;">提　交</div>
+        </div>
+    </ion-content>
+
+</ion-modal-view>
